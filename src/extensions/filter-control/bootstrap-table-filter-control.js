@@ -257,7 +257,11 @@
                 if (column.searchable && that.options.filterTemplate[nameControl]) {
                     addedFilterControl = true;
                     isVisible = 'visible';
-                    html.push(that.options.filterTemplate[nameControl](that, column.field, isVisible, column.filterControlPlaceholder));
+                    var columnPlaceHolder = "Search";
+                    if(column.filterControlPlaceholder){
+                        columnPlaceHolder = column.filterControlPlaceholder;
+                    }
+                    html.push(that.options.filterTemplate[nameControl](that, column.field, isVisible, columnPlaceHolder));
                 }
             }
 
